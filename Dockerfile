@@ -97,3 +97,10 @@ RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
     git clone https://github.com/MingChen0919/galaxy_tool_generator.git && \
     git clone https://github.com/MingChen0919/galaxy_tool_generator_ui.git && \
     drush en -y galaxy_tool_generator galaxy_tool_generator_ui
+
+
+EXPOSE 5432
+
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
