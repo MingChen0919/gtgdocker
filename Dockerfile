@@ -99,8 +99,6 @@ RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
     drush en -y galaxy_tool_generator galaxy_tool_generator_ui
 
 
-EXPOSE 5432
-
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
