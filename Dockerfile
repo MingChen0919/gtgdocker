@@ -104,6 +104,8 @@ RUN yum -y update && \
 	yum -y install python-pip && \
 	pip install --upgrade setuptools && \
 	pip install planemo
+	
+RUN yum install -y php-yaml
 
 
 ADD entrypoint.sh /entrypoint.sh
