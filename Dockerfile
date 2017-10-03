@@ -92,17 +92,18 @@ RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
     sudo -u postgres pg_ctl start -D /var/lib/pgsql/data/ && sleep 30 && \
     rm -f /usr/local/apache2/logs/httpd.pid && \
     /usr/sbin/httpd && sleep 5 && \
+    drush en devel admin_menu -y && \
+    drush dis toolbar -y && \
     mkdir custom && cd custom && \
     yum install -y git
 
 ##==================Install planemo===========
 ##
 ##============================================
-WORKDIR ~
-RUN yum groupinstall -y 'Development Tools' && \
-	wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh && \
-	bash Miniconda2-latest-Linux-x86_64.sh  -b -p $HOME/miniconda && \
-	export PATH="$HOME/miniconda/bin:$PATH"
+RUN yum -y update && \
+	yum -y install python-pip && \
+	pip install --upgrade setuptools && \
+	pip install planemo
 
 
 ADD entrypoint.sh /entrypoint.sh
