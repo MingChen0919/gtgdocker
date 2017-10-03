@@ -93,10 +93,16 @@ RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
     rm -f /usr/local/apache2/logs/httpd.pid && \
     /usr/sbin/httpd && sleep 5 && \
     mkdir custom && cd custom && \
-    yum install -y git && \
-    git clone https://github.com/MingChen0919/galaxy_tool_generator.git && \
-    git clone https://github.com/MingChen0919/galaxy_tool_generator_ui.git && \
-    drush en -y galaxy_tool_generator galaxy_tool_generator_ui
+    yum install -y git
+
+##==================Install planemo===========
+##
+##============================================
+WORKDIR ~
+RUN yum groupinstall -y 'Development Tools' && \
+	wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh && \
+	bash Miniconda2-latest-Linux-x86_64.sh  -b -p $HOME/miniconda && \
+	export PATH="$HOME/miniconda/bin:$PATH"
 
 
 ADD entrypoint.sh /entrypoint.sh
