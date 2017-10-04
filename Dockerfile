@@ -104,8 +104,14 @@ RUN yum -y update && \
 	yum -y install python-pip && \
 	pip install --upgrade setuptools && \
 	pip install planemo
-	
+
+## Install php extension to handle yaml file	
 RUN yum install -y php-yaml
+
+## allow exec() function to run planemo as sudoer (https://exain.wordpress.com/2007/11/24/execute-system-commands-via-php/).
+RUN echo 'apache ALL=NOPASSWD: ALL' >> /etc/sudoers
+
+
 
 
 ADD entrypoint.sh /entrypoint.sh
