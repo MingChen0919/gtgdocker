@@ -15,8 +15,5 @@ echo
 echo "Galaxy Tool Generator is ready at http://127.0.0.1:8080/"
 echo
 
-## start galaxy in daemon
-sh /root/galaxy/run.sh --daemon
-
 ##
 sh -c "$@"
