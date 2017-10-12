@@ -96,6 +96,7 @@ RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
     drush dis toolbar -y && \
     mkdir custom && cd custom && \
     yum install -y git
+RUN cd /var/www/html/sites/all/libraries && git clone https://github.com/galaxyproject/blend4php.git
 
 ##==================Install planemo===========
 ##
@@ -108,11 +109,25 @@ RUN yum -y update && \
 ## Install php extension to handle yaml file	
 RUN yum install -y php-yaml
 
+
+##================== Install galaxy=============
+## Install galaxy
+## Add galaxy.ini
+##      host = 0.0.0.0
+##      admin_users = admin@galaxy.org
+## Add tool_sheds_config.xml
+##      enable testtoolshed
+##==============================================
+WORKDIR /root
+RUN git clone -b release_17.05 https://github.com/galaxyproject/galaxy.git
+ADD galaxy/galaxy.ini /root/galaxy/config/galaxy.ini
+ADD galaxy/tool_sheds_conf.xml /root/galaxy/config/tool_sheds_conf.xml
+
 ## allow exec() function to run planemo as sudoer (https://exain.wordpress.com/2007/11/24/execute-system-commands-via-php/).
 RUN echo 'apache ALL=NOPASSWD: ALL' >> /etc/sudoers
 
 
-
+EXPOSE 8080
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
