@@ -109,21 +109,6 @@ RUN yum -y update && \
 ## Install php extension to handle yaml file	
 RUN yum install -y php-yaml
 
-
-##================== Install galaxy=============
-## Install galaxy
-## Add galaxy.ini
-##      host = 0.0.0.0
-##      admin_users = admin@galaxy.org
-## Add tool_sheds_config.xml
-##      enable testtoolshed
-##==============================================
-WORKDIR /root
-RUN git clone -b release_17.05 https://github.com/galaxyproject/galaxy.git
-ADD galaxy/galaxy.ini /root/galaxy/config/galaxy.ini
-ADD galaxy/tool_sheds_conf.xml /root/galaxy/config/tool_sheds_conf.xml
-RUN cp /root/galaxy/config/dependency_resolvers_conf.xml.sample /root/galaxy/config/dependency_resolvers_conf.xml
-
 ## allow exec() function to run planemo as sudoer (https://exain.wordpress.com/2007/11/24/execute-system-commands-via-php/).
 RUN echo 'apache ALL=NOPASSWD: ALL' >> /etc/sudoers
 
