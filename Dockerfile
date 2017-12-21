@@ -41,17 +41,17 @@ RUN yum upgrade -y php* && \
 ##		- initiate database
 ##		- create database and database user
 ##========================================
-ENV GALAXY_TOOL_PG_USER=galaxy_tool_generator \
-    GALAXY_TOOL_PG_DB=galaxy_tool_generator_db \
-    GALAXY_TOOL_PG_PASSWD=galaxy_tool_generator_passwd
+ENV GTG_PG_USER=gtg \
+    GTG_PG_DB=gtg_db \
+    GTG_PG_PASSWD=gtg_passwd
 RUN yum install -y postgresql-server
 USER postgres
 
 RUN initdb --encoding=UTF8 -D /var/lib/pgsql/data/
 ADD postgresql/* /var/lib/pgsql/data/
 RUN pg_ctl start -D /var/lib/pgsql/data/ && sleep 5 && \
-    psql -c "CREATE USER ${GALAXY_TOOL_PG_USER} WITH PASSWORD '${GALAXY_TOOL_PG_PASSWD}';" && \
-    createdb --encoding=UTF8 ${GALAXY_TOOL_PG_DB} -O ${GALAXY_TOOL_PG_USER}
+    psql -c "CREATE USER ${GTG_PG_USER} WITH PASSWORD '${GTG_PG_PASSWD}';" && \
+    createdb --encoding=UTF8 ${GTG_PG_DB} -O ${GTG_PG_USER}
 ##=========================================
 
 
@@ -69,7 +69,6 @@ RUN php -r "readfile('https://s3.amazonaws.com/files.drush.org/drush.phar');" > 
 ENV DRUPAL_ADMIN=galaxy \
     DRUPAL_PASSWD=galaxy
 ADD apache/httpd.conf /etc/httpd/conf/httpd.conf
-ADD drupal/settings.php /tmp/settings.php
 WORKDIR /var/www/html
 RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
 	sudo -u postgres pg_ctl start -D /var/lib/pgsql/data/ && sleep 30 && \
@@ -77,11 +76,20 @@ RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
     mv drupal*/* ./ && \
     mv drupal*/.htaccess ./ && \
     rm -rf drupal-7.56 && \
-    cp /tmp/settings.php sites/default/settings.php && \
+    cp sites/default/default.settings.php sites/default/settings.php && \
     chmod 777 sites/default/settings.php && \
     mkdir sites/default/files && chown -R apache:apache sites/default/files/ && \
     yum install sendmail -y && \
-    yes | drush site-install --site-name="Galaxy Tool Generator"  --db-url=pgsql://${GALAXY_TOOL_PG_USER}:${GALAXY_TOOL_PG_PASSWD}@localhost/${GALAXY_TOOL_PG_DB} --account-name=${DRUPAL_ADMIN} --account-pass=${DRUPAL_PASSWD} -y
+    yes | drush site-install --site-name="Galaxy Tool Generator"  --db-url=pgsql://${GTG_PG_USER}:${GTG_PG_PASSWD}@localhost/${GTG_PG_DB} --account-name=${DRUPAL_ADMIN} --account-pass=${DRUPAL_PASSWD} -y
+
+## add debugging lines to settings.php
+RUN chmod +w sites/default/settings.php && \
+    echo '$conf["drupal_http_request_fails"] = FALSE;' >> sites/default/settings.php && \
+    echo '$conf["theme_debug"] = TRUE;' >> sites/default/settings.php && \
+    echo 'error_reporting(-1);' >> sites/default/settings.php && \
+    echo '$conf["error_level"] = 2;' >> sites/default/settings.php && \
+    echo 'ini_set("display_errors", TRUE);' >> sites/default/settings.php && \
+    echo 'ini_set("display_startup_errors", TRUE);' >> sites/default/settings.php
 ##===========================================
 
 ##=================Install drupal modules=====
@@ -94,8 +102,11 @@ RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
     /usr/sbin/httpd && sleep 5 && \
     drush en devel admin_menu token -y && \
     drush dis toolbar -y && \
-    mkdir custom && cd custom && \
-    yum install -y git
+    mkdir GTG_modules && cd GTG_modules && \
+    yum install -y git && \
+    git clone https://github.com/MingChen0919/galaxy_tool_generator.git GTG_modules/galaxy_tool_generator && \
+    git clone https://github.com/MingChen0919/galaxy_tool_generator_ui.git GTG_modules/galaxy_tool_generator_ui && \
+    drush en -y galaxy_tool_generator galaxy_tool_generator_ui
 RUN cd /var/www/html/sites/all/libraries && git clone https://github.com/galaxyproject/blend4php.git
 
 ##==================Install planemo===========

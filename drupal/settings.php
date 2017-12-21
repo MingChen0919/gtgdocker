@@ -62,6 +62,7 @@
  *
  * Each database connection is specified as an array of settings,
  * similar to the following:
+ *
  * @code
  * array(
  *   'driver' => 'mysql',
@@ -244,7 +245,7 @@
  *   );
  * @endcode
  */
-$databases = array();
+$databases = [];
 
 /**
  * Access control for update.php script.
@@ -258,6 +259,14 @@ $databases = array();
  * TRUE back to a FALSE!
  */
 $update_free_access = FALSE;
+$databases['default']['default'] = [
+  'driver' => 'pgsql',
+  'database' => getenv('GTG_DB'),
+  'username' => getenv('GTG_PG_USER'),
+  'password' => getenv('GTG_PG_PASSWD'),
+  'host' => 'localhost',
+  'prefix' => '',
+];
 
 /**
  * Salt for one-time login links and cancel links, form tokens, etc.
@@ -630,11 +639,8 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 # $conf['allow_css_double_underscores'] = TRUE;
 
 
-
 $conf['drupal_http_request_fails'] = FALSE;
-
 $conf['theme_debug'] = TRUE; ## uncomment this line in settings.php
-
 error_reporting(-1);  // Have PHP complain about absolutely everything
 $conf['error_level'] = 2;  // Show all messages on your screen, 2 = ERROR_REPORTING_DISPLAY_ALL.
 ini_set('display_errors', TRUE);  // These lines just give you content on WSOD pages.
