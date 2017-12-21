@@ -1,6 +1,21 @@
 #!/usr/bin/env bash
 
-if [ $# == 1 ]; then
+while getopts ":mp" opt; do
+  case $opt in
+    m)
+      echo "-m was triggered! $1 was entered" >&2
+      ;;
+    p)
+      echo "-m was triggered! $1 was entered" >&2
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      ;;
+  esac
+done
+
+
+if [ $# -gt 0 ]; then
 
     if [ "$1" == "start" ]; then
 

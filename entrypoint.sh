@@ -1,8 +1,5 @@
 #!/bin/bash
 
-## start apache
-rm -f /usr/local/apache2/logs/httpd.pid
-/usr/sbin/httpd
 
 ## start postgresql
 rm -rf /var/lib/pgsql/data/postmaster.pid
@@ -13,4 +10,7 @@ echo
 sleep 5
 
 ##
-sh -c "$@"
+# sh -c "$@"
+## start apache
+rm -f /usr/local/apache2/logs/httpd.pid
+/usr/sbin/httpd -DFOREGROUND
