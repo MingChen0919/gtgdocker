@@ -1,7 +1,7 @@
 # Galaxy Tool Generator
 #
 # Version 1.0
-FROM centos:latest
+FROM centos:7
 
 ##======== Development tools =============
 ## Includes:
