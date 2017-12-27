@@ -104,8 +104,8 @@ RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
     drush dis toolbar -y && \
     mkdir GTG_modules && cd GTG_modules && \
     yum install -y git && \
-    git clone https://github.com/MingChen0919/galaxy_tool_generator.git GTG_modules/galaxy_tool_generator && \
-    git clone https://github.com/MingChen0919/galaxy_tool_generator_ui.git GTG_modules/galaxy_tool_generator_ui && \
+    git clone https://github.com/MingChen0919/galaxy_tool_generator.git && \
+    git clone https://github.com/MingChen0919/galaxy_tool_generator_ui.git && \
     drush en -y galaxy_tool_generator galaxy_tool_generator_ui
 RUN cd /var/www/html/sites/all/libraries && git clone https://github.com/galaxyproject/blend4php.git
 
