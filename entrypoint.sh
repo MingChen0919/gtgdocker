@@ -4,9 +4,9 @@
 ## execting pulling updates at the end makes it a little
 ## easier to integrate GTG module updates.
 ##==================================================
-cd /var/www/html/sites/all/modules/GTG_modules/galaxy_tool_generator && git pull origin master
-cd /var/www/html/sites/all/modules/GTG_modules/galaxy_tool_generator_ui && git pull origin master
-cd /var/www/html/sites/all/modules
+#cd /var/www/html/sites/all/modules/GTG_modules/galaxy_tool_generator && git pull origin master
+#cd /var/www/html/sites/all/modules/GTG_modules/galaxy_tool_generator_ui && git pull origin master
+#cd /var/www/html/sites/all/modules
 
 ## start postgresql
 rm -rf /var/lib/pgsql/data/postmaster.pid
