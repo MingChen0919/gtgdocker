@@ -8,6 +8,9 @@ echo "starting Galaxy Tool Generator..."
 echo
 sleep 5
 
+## enable gtg modules
+drush en -y galaxy_tool_generator galaxy_tool_generator_ui
+
 ##
 # sh -c "$@"
 ## start apache
