@@ -127,8 +127,8 @@ RUN echo 'apache ALL=NOPASSWD: ALL' >> /etc/sudoers
 # execting pulling updates at the end makes it a little
 # easier to integrate GTG module updates.
 #==================================================
-RUN cd /var/www/html/sites/all/modules/GTG_modules/galaxy_tool_generator && git pull origin master && \
-    cd /var/www/html/sites/all/modules/GTG_modules/galaxy_tool_generator_ui && git pull origin master
+RUN cd /var/www/html/sites/all/modules/GTG_modules/galaxy_tool_generator_ui && git pull origin master && \
+    cd /var/www/html/sites/all/modules/GTG_modules/galaxy_tool_generator && git pull origin master
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
