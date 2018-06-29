@@ -93,26 +93,14 @@ RUN chmod +w sites/default/settings.php && \
     echo 'ini_set("display_startup_errors", TRUE);' >> sites/default/settings.php
 ##===========================================
 
-##=================Install drupal modules=====
-##
-##============================================
-WORKDIR /var/www/html/sites/all/modules
-RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
-    sudo -u postgres pg_ctl start -D /var/lib/pgsql/data/ && sleep 30 && \
-    rm -f /usr/local/apache2/logs/httpd.pid && \
-    /usr/sbin/httpd && sleep 5 && \
-    drush en devel admin_menu token -y && \
-    drush dis toolbar -y && \
-    mkdir GTG_modules && cd GTG_modules && \
-    yum install -y git && \
-    git clone https://github.com/MingChen0919/galaxy_tool_generator.git && \
-    git clone https://github.com/MingChen0919/galaxy_tool_generator_ui.git
-RUN cd /var/www/html/sites/all/libraries && git clone https://github.com/galaxyproject/blend4php.git
 
 ##==================Install planemo===========
 ##
 ##============================================
 RUN yum -y update && \
+    # fix error: 'command 'gcc' failed with exit status 1' \
+    yum -y install gcc gcc-c++ kernel-devel && \
+    yum -y install python-devel libxslt-devel libffi-devel openssl-devel && \
 	yum -y install python-pip && \
 	pip install --upgrade setuptools && \
 	pip install planemo
@@ -124,14 +112,23 @@ RUN yum install -y php-yaml tree
 RUN echo 'apache ALL=NOPASSWD: ALL' >> /etc/sudoers
 
 
-#===================Pull updates on GTG Modules====
-# execting pulling updates at the end makes it a little
-# easier to integrate GTG module updates.
-#==================================================
-# add a meaningless layer for easily integrating github repo updates
-RUN ls -l > /dev/null
-RUN cd /var/www/html/sites/all/modules/GTG_modules/galaxy_tool_generator_ui && git pull origin master && \
-    cd /var/www/html/sites/all/modules/GTG_modules/galaxy_tool_generator && git pull origin master
+##=================Install drupal modules=====
+##
+##============================================
+WORKDIR /var/www/html/sites/all/modules
+RUN mkdir -p /var/www/html/sites/default/files/galaxy_tool_repository
+RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
+    sudo -u postgres pg_ctl start -D /var/lib/pgsql/data/ && sleep 30 && \
+    rm -f /usr/local/apache2/logs/httpd.pid && \
+    /usr/sbin/httpd && sleep 5 && \
+    drush en devel admin_menu token -y && \
+    drush dis toolbar -y && \
+    mkdir GTG_modules && cd GTG_modules && \
+    yum install -y git && \
+    git clone https://github.com/MingChen0919/galaxy_tool_generator.git && \
+    git clone https://github.com/MingChen0919/galaxy_tool_generator_ui.git && \
+    drush en -y galaxy_tool_generator galaxy_tool_generator_ui
+
 
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
