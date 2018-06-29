@@ -121,7 +121,7 @@ RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
     sudo -u postgres pg_ctl start -D /var/lib/pgsql/data/ && sleep 30 && \
     rm -f /usr/local/apache2/logs/httpd.pid && \
     /usr/sbin/httpd && sleep 5 && \
-    drush en devel admin_menu token -y && \
+    drush en devel admin_menu token page_load_progress -y && \
     drush dis toolbar -y && \
     mkdir GTG_modules && cd GTG_modules && \
     yum install -y git && \
