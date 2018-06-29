@@ -1,5 +1,7 @@
 # Docker Galaxy Tool Generator
 
+![](images/gtg-home.png)
+
 A Docker image to run the Galaxy Tool Generator application. To launch a GTG application, run the command:
 
 ```bash
