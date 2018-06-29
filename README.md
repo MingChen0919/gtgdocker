@@ -12,7 +12,7 @@ docker run --rm -d -p 80:80 --name GTG \
 
 Open your browser and enter: http://127.0.0.1.
 
-## Launch a Galaxy instance to test the tool
+## Launch a Galaxy instance for tool testing
 
 We can use this [docker image](https://github.com/bgruening/docker-galaxy-stable) to launch 
 a Galaxy instance for interactively testing our tool. We are going to map the Galaxy 
