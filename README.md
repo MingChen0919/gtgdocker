@@ -32,3 +32,6 @@ docker run --rm --name gtg_galaxy -p 8080:80 \
 	-v /full/path/to/database:/export/galaxy-central/database \
 	bgruening/galaxy-stable:17.09 startup > /dev/null 2>&1
 ```
+
+The Galaxy instance will be available at http://127.0.0.1:8080/. Login as an admin user with
+**username `admin`** and **password `admin`**.
