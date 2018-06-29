@@ -28,8 +28,8 @@ mkdir database
 docker run --rm --name gtg_galaxy -p 8080:80 \
 	-e "ENABLE_TTS_INSTALL=True" \
 	-e "GALAXY_CONFIG_BRAND=GTG" \
-	-v /full/path/to/shed_tools:/export/shed_tools \
-	-v /full/path/to/database:/export/galaxy-central/database \
+	-v `pwd`/shed_tools:/export/shed_tools \
+	-v `pwd`/database:/export/galaxy-central/database \
 	bgruening/galaxy-stable:17.09 startup > /dev/null 2>&1
 ```
 
