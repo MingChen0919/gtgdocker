@@ -130,6 +130,9 @@ RUN rm -rf /var/lib/pgsql/data/postmaster.pid && \
     drush en -y galaxy_tool_generator galaxy_tool_generator_ui
 
 
+## Install conda with planemo
+RUN yum -y install bzip2 && planemo conda_init
+
 ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
