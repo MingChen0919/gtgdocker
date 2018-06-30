@@ -2,6 +2,7 @@
 
 if [ -d "gtg_dev_dir" ]; then
 	echo "gtg_dev_dir directory already exists. Please remove it first."
+	exit 1;
 else
 	mkdir gtg_dev_dir
 	mkdir gtg_dev_dir/galaxy_tool_repository

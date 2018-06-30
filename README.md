@@ -18,3 +18,9 @@ docker pull bgruening/galaxy-stable:17.09
 wget https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/launch_dev_env.sh
 sh launch_dev_env.sh
 ```
+
+This script will launch a docker container running the GTG app and another container running
+a Galaxy instance. Login to the Galaxy instance with username **admin** and password **admin**
+so that you can install tools from tool shed.
+
+
