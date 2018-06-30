@@ -23,6 +23,14 @@ This script will launch a docker container running the GTG app and another conta
 a Galaxy instance. Login to the Galaxy instance with username **admin** and password **admin**
 so that you can install tools from tool shed.
 
+After running this script, you should see the following directories in your current directory:
+
+```
+gtg_dev_dir/
+├── database
+├── galaxy_tool_repository
+└── shed_tools
+```
 
 ## Build Tool XML
 
