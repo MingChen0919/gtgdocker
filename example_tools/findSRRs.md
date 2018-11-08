@@ -132,7 +132,7 @@ Add a **tool->outputs->data** component.
 
 ![](images/ssr_fasta_output.png)
 
-Edit input attributes
+Edit output attributes
 
 ![](images/ssr_fasta_output_attributes.png)
 
@@ -143,7 +143,7 @@ Add a **tool->outputs->data** component.
 
 ![](images/ssr_stats_output.png)
 
-Edit input attributes
+Edit output attributes
 
 ![](images/ssr_stats_output_attributes.png)
 
@@ -155,7 +155,7 @@ Add a **tool->outputs->data** component.
 
 ![](images/ssr_report_output.png)
 
-Edit input attributes
+Edit output attributes
 
 ![](images/ssr_report_output_attributes.png)
 
