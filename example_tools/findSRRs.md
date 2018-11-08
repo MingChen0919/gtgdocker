@@ -86,3 +86,43 @@ Edit input attributes
 
 ![](images/masked_file_input_attributes.png)
 
+
+## Add output components
+
+Since we are building an Aurora Galaxy Tool, the tool report will provide access to all tool outputs. However,
+if we want to expose some outputs to the Galaxy history so that it can be used as inputs for other tools, we will
+need to create output components for those outputs.
+
+Below is what this program outputs:
+
+```
+# Output:
+# ------
+# <input-file-name>.ssr.fasta
+# A fasta file with sequences with a SSR. (Sequences with compound SSRs are included)
+#
+# <input-file-name>.ssr_stats.txt
+# A text file of statistics about the SSRs discovered.
+#
+# <input-file-name>.ssr_report.txt
+# A tab-delimited file with each SSR.  The columns are SSR ID,
+# motif, number of repeats, start position, end position.
+#
+# <input-file-name>.ssr_report.xlsx
+# A excel file with SSR results and stats
+#
+# <input-file-name>.di_primer_report.txt
+# <input-file-name>.tri_primer_report.txt
+# <input-file-name>.tetra_primer_report.txt
+# Tab-delimited files with sequences with a specified SSR motif length.  Columns are
+# SSR ID, motif, number of repeats, start position, end position, left primer,
+# right primer, left primer Tm, right primer Tm, amplicon size
+```
+
+In this Galaxy tool, I choose to expose three outputs to the Galaxy history:
+* <input-file-name>.ssr.fasta
+* <input-file-name>.ssr_stats.txt
+* <input-file-name>.ssr_stats.txt
+
+
+
