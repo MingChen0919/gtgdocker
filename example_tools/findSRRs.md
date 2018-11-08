@@ -67,11 +67,22 @@ The `Find SRRs` only has two inputs. We create input component for each.
 
 ### The `fasta_file` input
 
-Add a **tool->inputs->param(type: data)** component for file input.
+Add a **tool->inputs->param(type: data)** component because this input takes a file path.
 
 ![](images/fasta_file_input.png)
 
 Edit input attributes
 
 ![](images/fasta_file_input_attributes.png)
+
+
+### The `masked_file` input
+
+Add a **tool->inputs->param(type: data)** component because this input takes a file path.
+
+![](images/masked_file_input.png)
+
+Edit input attributes
+
+![](images/masked_file_input_attributes.png)
 
