@@ -1,4 +1,8 @@
 
+# The tool: Find-SRRs
+
+The Find-SRRs tool is a perl script which can be found here: https://raw.githubusercontent.com/statonlab/Finding-SSRs/master/findSSRs_altered.pl.
+
 # Launch GTG and Galaxy
 
 Get a copy of `launch_dev_env.sh` to your local computer
@@ -35,7 +39,39 @@ We will wrap `findSSRs_altered.pl` as an Aurora Galaxy Tool.
 
 ## Add requirement components
 
-This tool require the following dependencies. We create a requirement component for each of these four components.
+This tool requires three perl modules - Getopt::Long, Bio::SeqIO, and Excel::Writer::XLSX - as well as Primer3. We create a requirement component for each of these four components. We can find the dependencies and their version numbers in [bioconda](https://anaconda.org/bioconda/repo).
+
+* perl-getopt-long (2.50)
+* perl-bioperl (1.7.2)
+* perl-excel-writer-xlsx (0.98)
+* primer3 (2.4.1a)
 
 ![](images/add_requirements_components.png)
+
+## Add input components
+
+The `Find SRRs` only has two inputs. We create input component for each.
+
+```
+# Usage: findSSRs.pl <arguments>
+#
+# The list of arguments includes:
+#
+# -f|--fasta_file <fasta_file>
+# Required.  The file of the sequences to be searched.
+#
+# -m|--masked_file <masked_fasta_file>
+# Required.  A soft-masked version of the fasta file (soft masked means low
+# complexity sequences are in lower case bases.)
+```
+
+### The `fasta_file` input
+
+Add a **tool->inputs->param(type: data)** component for file input.
+
+![](images/fasta_file_input.png)
+
+Edit input attributes
+
+![](images/fasta_file_input_attributes.png)
 
