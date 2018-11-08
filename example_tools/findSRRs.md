@@ -120,9 +120,43 @@ Below is what this program outputs:
 ```
 
 In this Galaxy tool, I choose to expose three outputs to the Galaxy history:
-* <input-file-name>.ssr.fasta
-* <input-file-name>.ssr_stats.txt
-* <input-file-name>.ssr_stats.txt
+* `<input-file-name>.ssr.fasta`
+* `<input-file-name>.ssr_stats.txt`
+* `<input-file-name>.ssr_report.txt`
 
+
+### The `ssr_fasta` output
+
+
+Add a **tool->outputs->data** component.
+
+![](images/ssr_fasta_output.png)
+
+Edit input attributes
+
+![](images/ssr_fasta_output_attributes.png)
+
+### The `ssr_stats` output
+
+
+Add a **tool->outputs->data** component.
+
+![](images/ssr_stats_output.png)
+
+Edit input attributes
+
+![](images/ssr_stats_output_attributes.png)
+
+
+### The `ssr_report` output
+
+
+Add a **tool->outputs->data** component.
+
+![](images/ssr_report_output.png)
+
+Edit input attributes
+
+![](images/ssr_report_output_attributes.png)
 
 
