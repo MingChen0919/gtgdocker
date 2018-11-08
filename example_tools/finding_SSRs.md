@@ -22,7 +22,7 @@ gtg_dev_dir
 └── shed_tools
 ```
 
-# Create XML
+# Create initial XML
 
 We will wrap `findSSRs_altered.pl` as an Aurora Galaxy Tool. 
 
@@ -31,3 +31,4 @@ We will wrap `findSSRs_altered.pl` as an Aurora Galaxy Tool.
 
 ![](images/create_tool_xml.png)
 
+# Add components to XML
