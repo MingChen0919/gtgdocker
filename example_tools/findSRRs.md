@@ -32,3 +32,10 @@ We will wrap `findSSRs_altered.pl` as an Aurora Galaxy Tool.
 ![](images/create_tool_xml.png)
 
 # Add components to XML
+
+## Add requirement components
+
+This tool require the following dependencies. We create a requirement component for each of these four components.
+
+![](images/add_requirements_components.png)
+
