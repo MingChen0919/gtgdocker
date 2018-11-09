@@ -213,12 +213,12 @@ how to specify options/flags: https://cran.r-project.org/web/packages/getopt/get
 
 **How to use the variables collected by `rmarkdown_report_render.R`?**
 
->>>
+>
 Aurora Galaxy Tools passes the arguments with two options: one is a set of R variables stored in a list named `opt`; the other
 is a set of environment variables. Variables are named in the format of `X_SHORT_FLAG`. For example, if I want to use the the
 variable `$report.files_path` in an R code chunk, I can access it by `opt$X_d`. If I want to use it as a environment variable, I can
 access it by `$X_d`.
->>>
+>
 
 
 
