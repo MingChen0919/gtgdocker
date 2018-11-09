@@ -269,6 +269,16 @@ which requires ToolShed API keys. Below is the interface to add ToolShed API key
 Once we complete building the XML file, we need to add it to the `gtg_dev_dir/galaxy_tool_repository`. 
 Click **Build Tool Repository**, select `rmarkdown_report.xml` and then click `Update XMLs in galaxy_tool_directory folder`.
 
-![](images/build_tool_repository.png)
+![](images/build_tool_repository.png).
+
+We also need to unzip the `vakata-jstree-3.3.5.zip` file within `gtg_dev_dir/galaxy_tool_repository` directory. After the file
+is unzipped, we can delete the `vakata-jstree-3.3.5.zip` file.
+
+## Publish tool
+
+Below is the webform to publish the tool to ToolShed or Test ToolShed. Fill out the form with necessary tool meta data and 
+then click `Publish to Test Tool Shed` to publish the tool to the Test ToolShed first.
+
+![](images/publish_tool.png)
 
 
