@@ -234,7 +234,7 @@ wget https://raw.githubusercontent.com/statonlab/Finding-SSRs/master/findSSRs_al
 
 Add the content below to the end of the `rmarkdown_report.Rmd` file.
 
-```
+<pre>
 # Run `findSRRs_altered.pl`
 
 * `${REPORT_FILES_PATH}`: the output directory that stores all analysis outputs.
@@ -242,12 +242,12 @@ Add the content below to the end of the `rmarkdown_report.Rmd` file.
 * `$X_f`: the path to the fasta file.
 * `$X_m`: the path to the masked fasta file.
 
-\```{bash}
+```{bash}
 cd ${REPORT_FILES_PATH}
 perl ${TOOL_INSTALL_DIR}/findSSRs_altered.pl \
   -f $X_f \
   -m $X_m
-\```
 ```
+</pre>
 
 
