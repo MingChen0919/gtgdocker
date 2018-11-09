@@ -119,7 +119,7 @@ Below is what this program outputs:
 # right primer, left primer Tm, right primer Tm, amplicon size
 ```
 
-In this Galaxy tool, I choose to expose three outputs to the Galaxy history:
+In this Galaxy tool, I choose to expose the following three outputs to the Galaxy history:
 * `<input-file-name>.ssr.fasta`
 * `<input-file-name>.ssr_stats.txt`
 * `<input-file-name>.ssr_report.txt`
@@ -189,7 +189,7 @@ Below is the updated command section
 
 ![](images/updated_command_section.png)
 
-## Edit `getopt.csv`
+# Edit `getopt.csv`
 
 In Aurora Galaxy Tools, the `rmarkdown_report_render.R` script runs as a command line program. The main purpose of it is to pass user inputs
 to `rmarkdown_report.Rmd` and render `rmarkdown_report.Rmd` to execute data analysis and generate analysis report. The `getopt.csv` is used to
@@ -211,5 +211,16 @@ R			1				character	ssr_report
 The `short flag` and the `variable name` column should be the same as what you put in the command section. Details can be found here about 
 how to specify options/flags: https://cran.r-project.org/web/packages/getopt/getopt.pdf.
 
+**How to use the variables collected by `rmarkdown_report_render.R`?**
 
 
+	+ **Aurora Galaxy Tools passes the arguments with two options: one is a set of R variables stored in a list named `opt`; the other
+is a set of environment variables. Variables are named in the format of `X_SHORT_FLAG`. For example, if I want to use the the
+variable `$report.files_path` in an R code chunk, I can access it by `opt$X_d`. If I want to use it as a environment variable, I can
+access it by `$X_d`.**  
+
+
+
+# Edit `rmarkdown_report.Rmd`
+
+The `rmarkdown_report.Rmd` is where all the analysis logic should go.
