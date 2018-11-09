@@ -189,5 +189,27 @@ Below is the updated command section
 
 ![](images/updated_command_section.png)
 
+## Edit `getopt.csv`
+
+In Aurora Galaxy Tools, the `rmarkdown_report_render.R` script runs as a command line program. The main purpose of it is to pass user inputs
+to `rmarkdown_report.Rmd` and render `rmarkdown_report.Rmd` to execute data analysis and generate analysis report. The `getopt.csv` is used to
+specify the short and long flags/options accepted by `rmarkdown_report_render.R`.
+
+Open `getopt.csv` and add the following content to the csv file.
+
+```
+short flag	argument mask	data type	variable name
+o	1	character	report
+d	1	character	report.files_path
+f	1	character	fasta_file
+m	1	character	masked_file
+F	1	character	ssr_fasta
+S	1	character	ssr_stats
+R	1	character	ssr_report
+```
+
+The `short flag` and the `variable name` column should be the same as what you put in the command section. Details can be found here about 
+how to specify options/flags: https://cran.r-project.org/web/packages/getopt/getopt.pdf.
+
 
 
