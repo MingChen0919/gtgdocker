@@ -299,6 +299,8 @@ Click **admin->Search Tool Shed->Galaxy Test Tool Shed** and search for tool `au
 
 # Sync tool in GTG to tool installed in Galaxy
 
+## Link tool between GTG and Galaxy
+
 Developing Galaxy tools is an iterative process. It's very likely that you need to update your XML file frequently. GTG allows you to test the updates easily by syncing the tool in GTG into the connected Galaxy instance. You will use the following interface to link the tool in GTG
 with the same tool installed in Galaxy. The path to the tool can be found in the `gtg_dev_dir/shed_tools`. For example, in this case the path
 would be `shed_tools/testtoolshed.g2.bx.psu.edu/repos/mingchen0919/aurora_findssrs/389ef73cf4e1/aurora_findssrs`. Enter this path to 
