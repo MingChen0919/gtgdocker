@@ -62,7 +62,7 @@ In this example we are going to use GTG to build this [seqtk_seq_2.xml](https://
 <tool id="seqtk_seq" name="Convert to FASTA (seqtk)" version="0.1.0">
 ```
 
-![](images/tool_component.png)
+![](images/root_component.png)
 
 
 
