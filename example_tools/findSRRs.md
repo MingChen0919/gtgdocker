@@ -185,3 +185,7 @@ After completing the edit of `rmarkdown_report.sh` file, click the `View/Update 
 
 ![](images/view_xml_tab.png)
 
+Below is the updated command line section
+
+
+
