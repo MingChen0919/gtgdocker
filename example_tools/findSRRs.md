@@ -1,7 +1,7 @@
 
 # The tool: Find-SRRs
 
-The Find-SRRs tool is a perl script which can be found here: https://raw.githubusercontent.com/statonlab/Finding-SSRs/master/findSSRs_altered.pl.
+The Find-SRRs tool is a perl script which can be found here: https://raw.githubusercontent.com/statonlab/Finding-SSRs/master/findSSRs_altered.pl. This instruction shows how to wrap this perl script into a Aurora Galaxy Tool.
 
 # Launch GTG and Galaxy
 
@@ -224,4 +224,30 @@ access it by `$X_d`.
 
 # Edit `rmarkdown_report.Rmd`
 
-The `rmarkdown_report.Rmd` is where all the analysis logic should go.
+The `rmarkdown_report.Rmd` is where all the analysis logic should go. First, you need to download the `findSSRs_altered.pl` script and place
+it into the `gtg_dev_dir/galaxy_tool_repository` directory.
+
+```
+cd gtg_dev_dir/galaxy_tool_repository
+wget https://raw.githubusercontent.com/statonlab/Finding-SSRs/master/findSSRs_altered.pl
+```
+
+Add the content below to the end of the `rmarkdown_report.Rmd` file.
+
+```
+# Run `findSRRs_altered.pl`
+
+* `${REPORT_FILES_PATH}`: the output directory that stores all analysis outputs.
+* `${TOOL_INSTALL_DIR}`: the tool install directory where the `findSSRs_altered.pl` is located.
+* `$X_f`: the path to the fasta file.
+* `$X_m`: the path to the masked fasta file.
+
+\```{bash}
+cd ${REPORT_FILES_PATH}
+perl ${TOOL_INSTALL_DIR}/findSSRs_altered.pl \
+  -f $X_f \
+  -m $X_m
+\```
+```
+
+
