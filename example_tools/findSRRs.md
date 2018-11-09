@@ -199,13 +199,13 @@ Open `getopt.csv` and add the following content to the csv file.
 
 ```
 short flag	argument mask	data type	variable name
-o	1	character	report
-d	1	character	report.files_path
-f	1	character	fasta_file
-m	1	character	masked_file
-F	1	character	ssr_fasta
-S	1	character	ssr_stats
-R	1	character	ssr_report
+o			1				character	report
+d			1				character	report.files_path
+f			1				character	fasta_file
+m			1				character	masked_file
+F			1				character	ssr_fasta
+S			1				character	ssr_stats
+R			1				character	ssr_report
 ```
 
 The `short flag` and the `variable name` column should be the same as what you put in the command section. Details can be found here about 
