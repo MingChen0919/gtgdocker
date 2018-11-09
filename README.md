@@ -42,11 +42,9 @@ GTG provides three ways to build a Galaxy XML file:
 
 ![](images/create-tool-xml.png)
 
-### Start with an existing XML
+### Start from scratch
 
-In this example we are going to use **Uploaded XML** option to build our tool XML file upon
-this [seqtk_seq_1.xml](https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_1.xml) and 
-create our final XML file [seqtk_seq_2.xml](https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml).
+In this example we are going to use GTG to build this [seqtk_seq_2.xml](https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml) file.
 
 
 
