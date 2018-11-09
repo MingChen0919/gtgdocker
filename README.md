@@ -56,7 +56,7 @@ In this example we are going to use GTG to build this [seqtk_seq_2.xml](https://
 * Enter `seqtk_seq_2.xml` into **XML file name**
 * Select **From scratch**
 
-![](images/init_seqtk.png)
+![](images/init_seqtk.png | width=50%)
 
 
 
