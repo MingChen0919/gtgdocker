@@ -162,7 +162,7 @@ Edit output attributes
 
 ## Edit XML command section
 
-We edit the shell script within the command section to collect all arguments.
+We edit the shell script within the command section. In Aurora Galaxy Tools, this shell script is only used to collect user inputs and any command line arguments.
 
 ![](images/command_section.png)
 
