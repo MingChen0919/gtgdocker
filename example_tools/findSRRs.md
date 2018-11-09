@@ -39,7 +39,7 @@ We will wrap `findSSRs_altered.pl` as an Aurora Galaxy Tool.
 
 ## Add requirement components
 
-This tool requires three perl modules - Getopt::Long, Bio::SeqIO, and Excel::Writer::XLSX - as well as Primer3. We create a requirement component for each of these four components. We can find the dependencies and their version numbers in [bioconda](https://anaconda.org/bioconda/repo).
+This tool requires three perl modules - Getopt::Long, Bio::SeqIO, and Excel::Writer::XLSX - as well as Primer3. We create requirement component for each of these four components. We can find the dependencies and their version numbers in [bioconda](https://anaconda.org/bioconda/repo).
 
 * perl-getopt-long (2.50)
 * perl-bioperl (1.7.2)
@@ -159,4 +159,29 @@ Edit output attributes
 
 ![](images/ssr_report_output_attributes.png)
 
+
+## Edit XML command section
+
+We edit the shell script within the command section to collect all arguments.
+
+![](images/command_section.png)
+
+Instead of editing the shell script directly through the component web form, we edit the shell
+script through the `gtg_dev_dir/galaxy_tool_repository/rmarkdown_report.sh` file. The content of this file
+will be automatically plugged into the command section when the XML page is being viewed.
+
+Open `gtg_dev_dir/galaxy_tool_repository/rmarkdown_report.sh` and add the following content to the end of the file.
+
+```
+            -f $fasta_file
+            -m $masked_file
+
+            -F $ssr_fasta
+            -S $ssr_stats
+            -R $ssr_report
+```
+
+After completing the edit of `rmarkdown_report.sh` file, click the `View/Update XML` tab **twice** to integrate the updates. 
+
+![](images/view_xml_tab.png)
 
