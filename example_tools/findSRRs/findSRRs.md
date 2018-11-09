@@ -295,7 +295,7 @@ Click **admin->Search Tool Shed->Galaxy Test Tool Shed** and search for tool `au
 
 ## Test `aurora_findssrs`
 
-![](aurora_findssrs.png)
+![](images/aurora_findssrs.png)
 
 
 
