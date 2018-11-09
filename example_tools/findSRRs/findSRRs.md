@@ -319,6 +319,19 @@ To have the updates in XML to take effect, you will also need to restart Galaxy 
 docker exec -it gtg_galaxy sh -c 'supervisorctl restart galaxy:'
 ```
 
+You expect to see the following stdout.
+
+```
+galaxy:galaxy_nodejs_proxy: stopped
+galaxy:handler0: stopped
+galaxy:handler1: stopped
+galaxy:galaxy_web: stopped
+galaxy:galaxy_nodejs_proxy: started
+galaxy:galaxy_web: started
+galaxy:handler0: started
+galaxy:handler1: started
+```
+
 
 
 
