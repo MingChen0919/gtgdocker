@@ -259,9 +259,16 @@ perl ${TOOL_INSTALL_DIR}/findSSRs_altered.pl \
 
 ## Add Test ToolShed API key
 
-GTG uses [planemo](https://planemo.readthedocs.io/en/latest/index.html) in the backend to publish tools to the Galaxy, 
+GTG uses [planemo](https://planemo.readthedocs.io/en/latest/index.html) in the backend to publish tools to ToolShed, 
 which requires ToolShed API keys. Below is the interface to add ToolShed API keys.
 
 ![](images/test_api_key.png)
+
+## Build Tool Repository
+
+Once we complete building the XML file, we need to add it to the `gtg_dev_dir/galaxy_tool_repository`. 
+Click **Build Tool Repository**, select `rmarkdown_report.xml` and then click `Update XMLs in galaxy_tool_directory folder`.
+
+![](images/build_tool_repository.png)
 
 
