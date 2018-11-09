@@ -297,5 +297,29 @@ Click **admin->Search Tool Shed->Galaxy Test Tool Shed** and search for tool `au
 
 ![](images/aurora_findssrs.png)
 
+# Sync tool in GTG to tool installed in Galaxy
+
+Developing Galaxy tools is an iterative process. It's very likely that you need to update your XML file frequently. GTG allows you to test the updates easily by syncing the tool in GTG into the connected Galaxy instance. You will use the following interface to link the tool in GTG
+with the same tool installed in Galaxy. The path to the tool can be found in the `gtg_dev_dir/shed_tools`. For example, in this case the path
+would be `shed_tools/testtoolshed.g2.bx.psu.edu/repos/mingchen0919/aurora_findssrs/389ef73cf4e1/aurora_findssrs`. Enter this path to 
+the `Path to a shed tool`.
+
+Everytime you update your XML file, you will need to integrate the updates by selecting the `rmarkdown_report.xml` and 
+click `Update XMLs in galaxy_tool_directory_folder`.
+
+![](images/sync_tool.png)
+
+## Restart Galaxy instance
+
+To have the updates in XML to take effect, you will also need to restart Galaxy instance. Use the following command to restart Galaxy 
+
+```
+docker exec -it gtg_galaxy sh -c 'supervisorctl restart galaxy:'
+```
+
+
+
+
+
 
 
