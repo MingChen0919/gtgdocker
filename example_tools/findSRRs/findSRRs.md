@@ -281,4 +281,21 @@ then click `Publish to Test Tool Shed` to publish the tool to the Test ToolShed 
 
 ![](images/publish_tool.png)
 
+# Test Tool in Galaxy
+
+## Install Tool into Galaxy
+
+Login to the connected Galaxy (http://127.0.0.1:8081/) with the `username` and `password` below:
+
+
+* user: `admin@galaxy.org`
+* password: `admin`
+
+Click **admin->Search Tool Shed->Galaxy Test Tool Shed** and search for tool `aurora_findssrs` and install the tool.
+
+## Test `aurora_findssrs`
+
+![](aurora_findssrs.png)
+
+
 
