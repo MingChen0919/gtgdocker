@@ -270,5 +270,11 @@ This component does not have attributes
 
 ![](images/tool_citations_attributes.png)
 
+Add **tool->citations->citation** component
 
+![](images/tool_citations_citation.png)
+
+Edit **tool->citations->citation** component attributes
+
+![](images/tool_citations_citation_attributes.png)
 
