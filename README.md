@@ -47,7 +47,7 @@ GTG provides three ways to build a Galaxy XML file:
 In this example we are going to use GTG to build this [seqtk_seq_2.xml](https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml) file.
 
 
-0. Initialize an XML
+#### 0. Initialize an XML
 
 * Click **Create Tool XML**
 * Enter `seqtk_seq_2.xml` into **XML file name**
@@ -56,7 +56,7 @@ In this example we are going to use GTG to build this [seqtk_seq_2.xml](https://
 ![](images/init_seqtk.png)
 
 
-1. Create **tool** component, which is the root component.
+#### 1. Create **tool** component, which is the root component.
 
 ```
 <tool id="seqtk_seq" name="Convert to FASTA (seqtk)" version="0.1.0">
@@ -69,7 +69,7 @@ Edit tool component attributes
 ![](images/tool_attributes.png)
 
 
-2. Create **tool->requirements** component.
+#### 2. Create **tool->requirements** component.
 
 ```
 <requirements>
@@ -93,7 +93,7 @@ Edit **tool->requirements->requirement** component attributes.
 
 ![](images/tool_requirements_seqtk_attributes.png)
 
-3. Create **tool->command** component
+#### 3. Create **tool->command** component
 
 ```
     <command detect_errors="exit_code"><![CDATA[
@@ -115,7 +115,7 @@ a `.sh` file. Put the shell script into this file, the content will be automatic
 
 ![](images/view_update_xml.png)
 
-4. Create **tool->inputs** component
+#### 4. Create **tool->inputs** component
 
 ```
     <inputs>
@@ -141,7 +141,7 @@ Edit **tool->inputs->param(type: data)** component attributes
 
 ![](images/tool_inputs_input_param_data_attributes.png)
 
-5. Create **tool->outputs** component
+#### 5. Create **tool->outputs** component
 
 ```
     <outputs>
@@ -159,7 +159,7 @@ In this example, we don't need to edit any attributes for this component.
 
 ![](images/tool_outputs_attributes.png)
 
-6. Create **tool->tests** component
+#### 6. Create **tool->tests** component
 
 ```
     <tests>
