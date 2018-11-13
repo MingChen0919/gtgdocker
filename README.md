@@ -190,6 +190,14 @@ This component does not have attributes
 
 ![](images/tool_tests_test_attributes.png)
 
+Add **tool->tests->test->param** component
+
+![](images/tool_tests_test_param.png)
+
+Edit **tool->tests->test->param** component
+
+![](images/tool_tests_test_param_attributes.png)
+
 
 
 
