@@ -328,6 +328,37 @@ Then we can publish the tool through the interface below.
 
 ![](images/publish_tool.png)
 
+### Install and test Tool in Galaxy
+
+The next step would be to install and test the tool in the connected Galaxy instance. If the tool needs more work, you can use GTG to update the XML file.
+
+The following interface is used to link the tool in GTG with the same tool installed in Galaxy so that the update will be automatically synced to Galaxy for testing.
+
+![](images/sync_tool.png)
+
+Everytime you update XML file in Galaxy, you will need to restart Galaxy to integrate the updates. Below is the command to restart Galaxy.
+
+```
+docker exec -it gtg_galaxy sh -c 'supervisorctl restart galaxy:'
+```
+
+You expect to see the following stdout.
+
+```
+galaxy:galaxy_nodejs_proxy: stopped
+galaxy:handler0: stopped
+galaxy:handler1: stopped
+galaxy:galaxy_web: stopped
+galaxy:galaxy_nodejs_proxy: started
+galaxy:galaxy_web: started
+galaxy:handler0: started
+galaxy:handler1: started
+```
+
+# More examples
+
+* [findSSRs tool](https://github.com/MingChen0919/gtgdocker/blob/master/example_tools/findSRRs/findSRRs.md): an example for developing [Aurora Galaxy Tools](https://github.com/statonlab/aurora-galaxy-tools). 
+
 
 
 
