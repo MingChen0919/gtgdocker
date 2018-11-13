@@ -149,6 +149,16 @@ Edit **tool->inputs->param(type: data)** component attributes
     </outputs>
 ```
 
+Add **tool->outputs** component
+
+![](images/tool_outputs.png)
+
+Edit **tool->outputs** component attributes
+
+In this example, we don't need to edit any attributes for this component.
+
+![](images/tool_outputs_attributes.png)
+
 
 
 
