@@ -180,10 +180,15 @@ This component does not have attributes
 
 ![](images/tool_tests_attributes.png)
 
+Add **tool->tests->test** component
 
+![](images/tool_tests_test.png)
 
+Edit **tool->tests->test** component attributes
 
+This component does not have attributes
 
+![](images/tool_tests_test_attributes.png)
 
 
 
