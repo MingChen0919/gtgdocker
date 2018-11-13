@@ -279,7 +279,7 @@ Edit **tool->citations->citation** component attributes
 ![](images/tool_citations_citation_attributes.png)
 
 
-### View the complete XML file
+#### 9. View the complete XML file
 
 Now you have created all the components for building the [seqtk_seq_2.xml](https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml) file, you can view the XML page to see how it look like on GTG. Of course, you can view the XML page
 any time you want. It doesn't have to be after you have added all the components.
@@ -289,4 +289,19 @@ any time you want. It doesn't have to be after you have added all the components
 Below is the XML page.
 
 ![](images/xml_page_view.png)
+
+
+### Build tool repository
+
+You have just created the `seqtk_seq_2.xml` file in GTG. However, this file is not in the `gtg_dev_dir/galaxy_tool_repository` directory yet.
+We need to the XML file into it, and any other non-XML files if there is any.
+
+Click the **Build Tool Repository** tab and select any XML files that you want to add to the `gtg_dev_dir/galaxy_tool_repository` directory. And then click the `Update XMLs in galaxy_tool_directory folder`. **This is also the button that you use to add an updated XML to the directory**.
+
+![](images/build_tool_repository.png)
+
+You should see the `seqtk_seq_2.xml` file in the `gtg_dev_dir` directory.
+
+![](images/gtg_dev_dir.png)
+
 
