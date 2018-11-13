@@ -1,7 +1,12 @@
+# Galaxy Tool Generator (GTG)
+
+GTG is a [Drupal](https://www.drupal.org/) based web application which enables developing and publishing 
+Galaxy tools through web interfaces. It web application consists of two Drupal modules: [galaxy_tool_generator_ui](https://github.com/MingChen0919/galaxy_tool_generator_ui) and [galaxy_tool_generator](https://github.com/MingChen0919/galaxy_tool_generator_ui), and
+depends on the Drupal [webform](https://www.drupal.org/project/webform) module.
+
 # Docker Galaxy Tool Generator
 
-This docker image can be used to launch a Galaxy Tool Generator (GTG) for developing Galaxy
-tools through web interfaces.
+This repository builds a Docker image that can be used to quickly launch the GTG web application for Galaxy tool development.
 
 ![](images/gtg-home.png)
  
@@ -44,7 +49,7 @@ GTG provides three ways to build a Galaxy XML file:
 
 ### Start from scratch
 
-In this example we are going to use GTG to build this [seqtk_seq_2.xml](https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml) file.
+For comparison with another software for Galaxy tool development [**planemo**](https://planemo.readthedocs.io/en/latest/), I am going to use [an example](https://planemo.readthedocs.io/en/latest/writing_standalone.html) from the planemo use cases. In this example we are going to use GTG to build this [seqtk_seq_2.xml](https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml) file.
 
 
 #### 0. Initialize an XML
@@ -300,8 +305,13 @@ Click the **Build Tool Repository** tab and select any XML files that you want t
 
 ![](images/build_tool_repository.png)
 
-You should see the `seqtk_seq_2.xml` file in the `gtg_dev_dir` directory.
+You should be able to see the `seqtk_seq_2.xml` file in the `gtg_dev_dir` directory.
 
 ![](images/gtg_dev_dir.png)
+
+
+### Add non-XML files
+
+
 
 
