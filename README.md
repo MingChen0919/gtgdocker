@@ -56,13 +56,17 @@ In this example we are going to use GTG to build this [seqtk_seq_2.xml](https://
 ![](images/init_seqtk.png)
 
 
-1. create **tool** component, which is the root component.
+1.0 create **tool** component, which is the root component.
 
 ```
 <tool id="seqtk_seq" name="Convert to FASTA (seqtk)" version="0.1.0">
 ```
 
 ![](images/root_component.png)
+
+1.1 edit tool component attributes
+
+![](images/tool_attributes.png)
 
 
 
