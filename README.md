@@ -198,6 +198,14 @@ Edit **tool->tests->test->param** component
 
 ![](images/tool_tests_test_param_attributes.png)
 
+Add **tool->tests->test-output** component
+
+![](images/tool_tests_test_output.png)
+
+Edit **tool->tests->test-output** component
+
+![](images/tool_tests_test_output_attributes.png)
+
 
 
 
