@@ -244,5 +244,31 @@ Edit **tool->help** component attributes
 ![](images/tool_help_attributes.png)
 
 
+#### 8. Create **tool->citations** component
+
+```
+<citations>
+        <citation type="bibtex">
+@misc{githubseqtk,
+  author = {LastTODO, FirstTODO},
+  year = {TODO},
+  title = {seqtk},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  url = {https://github.com/lh3/seqtk},
+}</citation>
+    </citations>
+```
+
+Add **tool->citations** component
+
+![](images/tool_citations.png)
+
+Edit **tool->citations** component attributes
+
+This component does not have attributes
+
+![](images/tool_citations_attributes.png)
+
 
 
