@@ -47,7 +47,7 @@ GTG provides three ways to build a Galaxy XML file:
 In this example we are going to use GTG to build this [seqtk_seq_2.xml](https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml) file.
 
 
-0 initialize an XML
+0. Initialize an XML
 
 * Click **Create Tool XML**
 * Enter `seqtk_seq_2.xml` into **XML file name**
@@ -56,7 +56,7 @@ In this example we are going to use GTG to build this [seqtk_seq_2.xml](https://
 ![](images/init_seqtk.png)
 
 
-1 create **tool** component, which is the root component.
+1. Create **tool** component, which is the root component.
 
 ```
 <tool id="seqtk_seq" name="Convert to FASTA (seqtk)" version="0.1.0">
@@ -69,7 +69,7 @@ Edit tool component attributes
 ![](images/tool_attributes.png)
 
 
-2 create **requirements** component.
+2. Create **tool->requirements** component.
 
 ```
 <requirements>
@@ -92,6 +92,10 @@ Add **tool->requirements->requirement** component
 Edit **tool->requirements->requirement** component attributes.
 
 ![](images/tool_requirements_seqtk_attributes.png)
+
+3. Create **tool->command** component
+
+![](images/tool_command.png)
 
 
 
