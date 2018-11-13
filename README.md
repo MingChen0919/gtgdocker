@@ -125,13 +125,13 @@ a `.sh` file. Put the shell script into this file, the content will be automatic
 
 Add **tool->inputs** component
 
-~[](images/tool_inputs.png)
+![](images/tool_inputs.png)
 
 Edit **tool->inputs** component attributes
 
 In this example, we don't need to edit any attributes for this component.
 
-~[](images/tool_inputs_attributes.png)
+![](images/tool_inputs_attributes.png)
 
 
 
