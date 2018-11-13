@@ -288,5 +288,5 @@ any time you want. It doesn't have to be after you have added all the components
 
 Below is the XML page.
 
-![](xml_page_view.png)
+![](images/xml_page_view.png)
 
