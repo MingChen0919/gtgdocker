@@ -133,6 +133,22 @@ In this example, we don't need to edit any attributes for this component.
 
 ![](images/tool_inputs_attributes.png)
 
+Add **tool->inputs->param(type: data)** component
+
+![](images/tool_inputs_input_param_data.png)
+
+Edit **tool->inputs->param(type: data)** component attributes
+
+![](images/tool_inputs_input_param_data_attributes.png)
+
+5. Create **tool->outputs** component
+
+```
+    <outputs>
+        <data name="output1" format="fasta" />
+    </outputs>
+```
+
 
 
 
