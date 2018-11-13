@@ -278,3 +278,15 @@ Edit **tool->citations->citation** component attributes
 
 ![](images/tool_citations_citation_attributes.png)
 
+
+### View the complete XML file
+
+Now you have created all the components for building the [seqtk_seq_2.xml](https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml) file, you can view the XML page to see how it look like on GTG. Of course, you can view the XML page
+any time you want. It doesn't have to be after you have added all the components.
+
+![](images/complete_components.png)
+
+Below is the XML page.
+
+![](xml_page_view.png)
+
