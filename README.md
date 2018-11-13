@@ -4,11 +4,12 @@ GTG is a [Drupal](https://www.drupal.org/) based web application which enables d
 Galaxy tools through web interfaces. It web application consists of two Drupal modules: [galaxy_tool_generator_ui](https://github.com/MingChen0919/galaxy_tool_generator_ui) and [galaxy_tool_generator](https://github.com/MingChen0919/galaxy_tool_generator_ui), and
 depends on the Drupal [webform](https://www.drupal.org/project/webform) module.
 
+![](images/gtg-home.png)
+
 # Docker Galaxy Tool Generator
 
 This repository builds a Docker image that can be used to quickly launch the GTG web application for Galaxy tool development.
 
-![](images/gtg-home.png)
  
 To get necessary docker images:
 
