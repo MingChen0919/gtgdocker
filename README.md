@@ -313,6 +313,23 @@ You should be able to see the `seqtk_seq_2.xml` file in the `gtg_dev_dir` direct
 
 ### Add non-XML files
 
+If this tool requires any other non-XML files (for example, test files, scripts, etc.), you can add them directory to the `gtg_dev_dir/galaxy_tool_repository` directory.
+
+
+### Publish tool to Test ToolShed
+
+Once we have the XML file(s) and all other non-XML files in the `gtg_dev_dir/galaxy_tool_repository`, we can publish the tool to Test ToolShed or ToolShed with GTG.
+
+First, we need to add the API key.
+
+![](images/api_key.png)
+
+Then we can publish the tool through the interface below.
+
+![](images/publish_tool.png)
+
+
+
 
 
 
