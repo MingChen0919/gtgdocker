@@ -1,7 +1,7 @@
 # Galaxy Tool Generator (GTG)
 
 GTG is a [Drupal](https://www.drupal.org/) based web application which enables developing and publishing 
-Galaxy tools through web interfaces. It web application consists of two Drupal modules: [galaxy_tool_generator_ui](https://github.com/MingChen0919/galaxy_tool_generator_ui) and [galaxy_tool_generator](https://github.com/MingChen0919/galaxy_tool_generator_ui), and
+Galaxy tools through web interfaces. This web application consists of two Drupal modules: [galaxy_tool_generator_ui](https://github.com/MingChen0919/galaxy_tool_generator_ui) and [galaxy_tool_generator](https://github.com/MingChen0919/galaxy_tool_generator_ui), and
 depends on the Drupal [webform](https://www.drupal.org/project/webform) module.
 
 ![](images/gtg-home.png)
