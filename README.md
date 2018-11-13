@@ -95,7 +95,19 @@ Edit **tool->requirements->requirement** component attributes.
 
 3. Create **tool->command** component
 
+```
+    <command detect_errors="exit_code"><![CDATA[
+        seqtk seq -a '$input1' > '$output1'
+    ]]></command>
+```
+
+Add **tool->command** component
+
 ![](images/tool_command.png)
+
+Edit **tool->command** component attributes.
+
+![](images/tool_command_attributes.png)
 
 
 
