@@ -77,13 +77,21 @@ Edit tool component attributes
 </requirements>
 ```
 
-Add `tool->requirements` component
+Add **tool->requirements** component
 
 ![](images/tool_requirements.png)
 
-Edit `tool->requirements` component attributes. However, this component does not have any attributes.
- 
+Edit **tool->requirements** component attributes. However, this component does not have any attributes.
+
 ![](images/tool_requirements_attributes.png)
+
+Add **tool->requirements->requirement** component
+
+![](images/tool_requirements_seqtk.png)
+
+Edit **tool->requirements->requirement** component attributes.
+
+![](images/tool_requirements_seqtk_attributes.png)
 
 
 
