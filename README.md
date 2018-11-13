@@ -159,6 +159,28 @@ In this example, we don't need to edit any attributes for this component.
 
 ![](images/tool_outputs_attributes.png)
 
+6. Create **tool->tests** component
+
+```
+    <tests>
+        <test>
+            <param name="input1" value="2.fastq"/>
+            <output name="output1" file="2.fasta"/>
+        </test>
+    </tests>
+```
+
+Add **tool->tests** component
+
+![](images/tool_tests.png)
+
+Edit **tool->tests** component attributes
+
+This component does not have attributes
+
+![](images/tool_tests_attributes.png)
+
+
 
 
 
