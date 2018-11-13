@@ -77,8 +77,12 @@ Edit tool component attributes
 </requirements>
 ```
 
+Add `tool->requirements` component
+
 ![](images/tool_requirements.png)
 
+Edit `tool->requirements` component attributes. However, this component does not have any attributes.
+ 
 ![](images/tool_requirements_attributes.png)
 
 
