@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Galaxy Tool Generator's documentation!
+Galaxy Tool Generator!
 =================================================
 
 .. toctree::
@@ -11,10 +11,6 @@ Welcome to Galaxy Tool Generator's documentation!
    :caption: Contents:
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   introduction
+   user_guide
+   developer_guide
