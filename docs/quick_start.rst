@@ -19,7 +19,7 @@ To get necessary docker images:
 Launch GTG
 -----------
 
-code-block:: shell
+.. code-block:: shell
 
   wget https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/launch_dev_env.sh
   sh launch_dev_env.sh
