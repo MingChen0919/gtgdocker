@@ -80,11 +80,11 @@ Edit tool component attributes
 2. Create **tool->requirements** component.
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-```
-<requirements>
-        <requirement type="package" version="1.2">seqtk</requirement>
-</requirements>
-```
+.. code-block:: shell
+
+  <requirements>
+          <requirement type="package" version="1.2">seqtk</requirement>
+  </requirements>
 
 Add **tool->requirements** component
 
@@ -105,13 +105,11 @@ Edit **tool->requirements->requirement** component attributes.
 3. Create **tool->command** component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-```
+.. code-block:: shell
+
     <command detect_errors="exit_code"><![CDATA[
         seqtk seq -a '$input1' > '$output1'
     ]]></command>
-```
-
-.. image:: path
 
 
 Add **tool->command** component
@@ -133,11 +131,11 @@ a ``.sh`` file. Put the shell script into this file, the content will be automat
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-```
-    <inputs>
+.. code-block:: shell
+
+      <inputs>
         <param type="data" name="input1" format="fastq" />
     </inputs>
-```
 
 Add **tool->inputs** component
 
@@ -160,11 +158,11 @@ Edit **tool->inputs->param(type: data)** component attributes
 5. Create **tool->outputs** component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-```
+.. code-block:: shell
+
     <outputs>
         <data name="output1" format="fasta" />
     </outputs>
-```
 
 Add **tool->outputs** component
 
@@ -179,14 +177,14 @@ In this example, we don't need to edit any attributes for this component.
 6. Create **tool->tests** component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-```
-    <tests>
+.. code-block:: shell
+
+      <tests>
         <test>
             <param name="input1" value="2.fastq"/>
             <output name="output1" file="2.fasta"/>
         </test>
     </tests>
-```
 
 Add **tool->tests** component
 
@@ -228,31 +226,33 @@ Edit **tool->tests->test-output** component attributes
 7. Create **tool->help** component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-```
-    <help><![CDATA[
+.. code-block:: shell
 
-Usage:   seqtk seq [options] <in.fq>|<in.fa>
-Options: -q INT    mask bases with quality lower than INT [0]
-         -X INT    mask bases with quality higher than INT [255]
-         -n CHAR   masked bases converted to CHAR; 0 for lowercase [0]
-         -l INT    number of residues per line; 0 for 2^32-1 [0]
-         -Q INT    quality shift: ASCII-INT gives base quality [33]
-         -s INT    random seed (effective with -f) [11]
-         -f FLOAT  sample FLOAT fraction of sequences [1]
-         -M FILE   mask regions in BED or name list FILE [null]
-         -L INT    drop sequences with length shorter than INT [0]
-         -c        mask complement region (effective with -M)
-         -r        reverse complement
-         -A        force FASTA output (discard quality)
-         -C        drop comments at the header lines
-         -N        drop sequences containing ambiguous bases
-         -1        output the 2n-1 reads only
-         -2        output the 2n reads only
-         -V        shift quality by '(-Q) - 33'
-         -U        convert all bases to uppercases
-         -S        strip of white spaces in sequences
-    ]]></help>
-```
+  <help><![CDATA[
+
+  Usage:   seqtk seq [options] <in.fq>|<in.fa>
+  Options: -q INT    mask bases with quality lower than INT [0]
+           -X INT    mask bases with quality higher than INT [255]
+           -n CHAR   masked bases converted to CHAR; 0 for lowercase [0]
+           -l INT    number of residues per line; 0 for 2^32-1 [0]
+           -Q INT    quality shift: ASCII-INT gives base quality [33]
+           -s INT    random seed (effective with -f) [11]
+           -f FLOAT  sample FLOAT fraction of sequences [1]
+           -M FILE   mask regions in BED or name list FILE [null]
+           -L INT    drop sequences with length shorter than INT [0]
+           -c        mask complement region (effective with -M)
+           -r        reverse complement
+           -A        force FASTA output (discard quality)
+           -C        drop comments at the header lines
+           -N        drop sequences containing ambiguous bases
+           -1        output the 2n-1 reads only
+           -2        output the 2n reads only
+           -V        shift quality by '(-Q) - 33'
+           -U        convert all bases to uppercases
+           -S        strip of white spaces in sequences
+      ]]></help>
+
+
 
 Add **tool->help** component
 
@@ -266,19 +266,20 @@ Edit **tool->help** component attributes
 8. Create **tool->citations** component
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-```
-<citations>
-        <citation type="bibtex">
-@misc{githubseqtk,
-  author = {LastTODO, FirstTODO},
-  year = {TODO},
-  title = {seqtk},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  url = {https://github.com/lh3/seqtk},
-}</citation>
-    </citations>
-```
+.. code-block:: shell
+
+  <citations>
+          <citation type="bibtex">
+  @misc{githubseqtk,
+    author = {LastTODO, FirstTODO},
+    year = {TODO},
+    title = {seqtk},
+    publisher = {GitHub},
+    journal = {GitHub repository},
+    url = {https://github.com/lh3/seqtk},
+  }</citation>
+      </citations>
+
 
 Add **tool->citations** component
 
@@ -355,23 +356,24 @@ The following interface is used to link the tool in GTG with the same tool insta
 
 Everytime you update XML file in Galaxy, you will need to restart Galaxy to integrate the updates. Below is the command to restart Galaxy.
 
-```
-docker exec -it gtg_galaxy sh -c 'supervisorctl restart galaxy:'
-```
+.. code-block:: shell
+
+  docker exec -it gtg_galaxy sh -c 'supervisorctl restart galaxy:'
 
 You expect to see the following stdout.
 
-```
-galaxy:galaxy_nodejs_proxy: stopped
-galaxy:handler0: stopped
-galaxy:handler1: stopped
-galaxy:galaxy_web: stopped
-galaxy:galaxy_nodejs_proxy: started
-galaxy:galaxy_web: started
-galaxy:handler0: started
-galaxy:handler1: started
-```
+.. code-block:: shell
 
-# More examples
+  galaxy:galaxy_nodejs_proxy: stopped
+  galaxy:handler0: stopped
+  galaxy:handler1: stopped
+  galaxy:galaxy_web: stopped
+  galaxy:galaxy_nodejs_proxy: started
+  galaxy:galaxy_web: started
+  galaxy:handler0: started
+  galaxy:handler1: started
+
+More examples
+--------------
 
 * [findSSRs tool](https://github.com/MingChen0919/gtgdocker/blob/master/example_tools/findSRRs/findSRRs.md): an example for developing [Aurora Galaxy Tools](https://github.com/statonlab/aurora-galaxy-tools).
