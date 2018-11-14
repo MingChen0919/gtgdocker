@@ -52,30 +52,33 @@ Start from scratch
 
 For comparison with another software for Galaxy tool development `planemo <https://planemo.readthedocs.io/en/latest/> `_, I am going to use `an example <https://planemo.readthedocs.io/en/latest/writing_standalone.html>`_ from the planemo use cases. In this example we are going to use GTG to build this `seqtk_seq_2.xml <https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml>`_ file.
 
+0. Initialize an XML
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-#### 0. Initialize an XML
 
 * Click **Create Tool XML**
 * Enter `seqtk_seq_2.xml` into **XML file name**
 * Select **From scratch** and click **Save**
 
-![](images/init_seqtk.png)
+.. image:: /_static/imagesinit_seqtk.png
 
 
-#### 1. Create **tool** component, which is the root component.
+1. Create **tool** component, which is the root component.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ```
 <tool id="seqtk_seq" name="Convert to FASTA (seqtk)" version="0.1.0">
 ```
 
-![](images/root_component.png)
+.. image:: /_static/imagesroot_component.png
 
 Edit tool component attributes
 
-![](images/tool_attributes.png)
+.. image:: /_static/imagestool_attributes.png
 
 
-#### 2. Create **tool->requirements** component.
+2. Create **tool->requirements** component.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ```
 <requirements>
@@ -85,21 +88,22 @@ Edit tool component attributes
 
 Add **tool->requirements** component
 
-![](images/tool_requirements.png)
+.. image:: /_static/imagestool_requirements.png
 
 Edit **tool->requirements** component attributes. However, this component does not have any attributes.
 
-![](images/tool_requirements_attributes.png)
+.. image:: /_static/imagestool_requirements_attributes.png
 
 Add **tool->requirements->requirement** component
 
-![](images/tool_requirements_seqtk.png)
+.. image:: /_static/imagestool_requirements_seqtk.png
 
 Edit **tool->requirements->requirement** component attributes.
 
-![](images/tool_requirements_seqtk_attributes.png)
+.. image:: /_static/imagestool_requirements_seqtk_attributes.png
 
-#### 3. Create **tool->command** component
+3. Create **tool->command** component
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ```
     <command detect_errors="exit_code"><![CDATA[
@@ -107,21 +111,27 @@ Edit **tool->requirements->requirement** component attributes.
     ]]></command>
 ```
 
+.. image:: path
+
+
 Add **tool->command** component
 
-![](images/tool_command.png)
+.. image:: /_static/imagestool_command.png
 
 Edit **tool->command** component attributes.
 
-![](images/tool_command_attributes.png)
+.. image:: /_static/imagestool_command_attributes.png
 
 The **XML value** field in the above web form is used to collect the shell script for the command section. However,
 there is an easier way to input shell script into the tool XML file. Go to the **gtg_dev_dir/galaxy_tool_repository** and create
-a `.sh` file. Put the shell script into this file, the content will be automatically integrated into the web form field when the XML webform page is being viewed (see the image below). The `.sh` file should have exact the same base name as the XML file. For example, in this example, the XML file is `seqtk_seq_2.xml`, then the `.sh` file should be `seqtk_seq_2.xml`.
+a ``.sh`` file. Put the shell script into this file, the content will be automatically integrated into the web form field when the XML webform page is being viewed (see the image below). The ``.sh`` file should have exact the same base name as the XML file. For example, in this example, the XML file is ``seqtk_seq_2.xml``, then the ``.sh`` file should be ``seqtk_seq_2.xml``.
 
-![](images/view_update_xml.png)
+.. image:: /_static/imagesview_update_xml.png
 
-#### 4. Create **tool->inputs** component
+
+4. Create **tool->inputs** component
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 
 ```
     <inputs>
@@ -131,23 +141,24 @@ a `.sh` file. Put the shell script into this file, the content will be automatic
 
 Add **tool->inputs** component
 
-![](images/tool_inputs.png)
+.. image:: /_static/imagestool_inputs.png
 
 Edit **tool->inputs** component attributes
 
 In this example, we don't need to edit any attributes for this component.
 
-![](images/tool_inputs_attributes.png)
+.. image:: /_static/imagestool_inputs_attributes.png
 
 Add **tool->inputs->param(type: data)** component
 
-![](images/tool_inputs_input_param_data.png)
+.. image:: /_static/imagestool_inputs_input_param_data.png
 
 Edit **tool->inputs->param(type: data)** component attributes
 
-![](images/tool_inputs_input_param_data_attributes.png)
+.. image:: /_static/imagestool_inputs_input_param_data_attributes.png
 
-#### 5. Create **tool->outputs** component
+5. Create **tool->outputs** component
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ```
     <outputs>
@@ -157,15 +168,16 @@ Edit **tool->inputs->param(type: data)** component attributes
 
 Add **tool->outputs** component
 
-![](images/tool_outputs.png)
+.. image:: /_static/imagestool_outputs.png
 
 Edit **tool->outputs** component attributes
 
 In this example, we don't need to edit any attributes for this component.
 
-![](images/tool_outputs_attributes.png)
+.. image:: /_static/imagestool_outputs_attributes.png
 
-#### 6. Create **tool->tests** component
+6. Create **tool->tests** component
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ```
     <tests>
@@ -178,42 +190,43 @@ In this example, we don't need to edit any attributes for this component.
 
 Add **tool->tests** component
 
-![](images/tool_tests.png)
+.. image:: /_static/imagestool_tests.png
 
 Edit **tool->tests** component attributes
 
 This component does not have attributes
 
-![](images/tool_tests_attributes.png)
+.. image:: /_static/imagestool_tests_attributes.png
 
 Add **tool->tests->test** component
 
-![](images/tool_tests_test.png)
+.. image:: /_static/imagestool_tests_test.png
 
 Edit **tool->tests->test** component attributes
 
 This component does not have attributes
 
-![](images/tool_tests_test_attributes.png)
+.. image:: /_static/imagestool_tests_test_attributes.png
 
 Add **tool->tests->test->param** component
 
-![](images/tool_tests_test_param.png)
+.. image:: /_static/imagestool_tests_test_param.png
 
 Edit **tool->tests->test->param** component attributes
 
-![](images/tool_tests_test_param_attributes.png)
+.. image:: /_static/imagestool_tests_test_param_attributes.png
 
 Add **tool->tests->test-output** component
 
-![](images/tool_tests_test_output.png)
+.. image:: /_static/imagestool_tests_test_output.png
 
 Edit **tool->tests->test-output** component attributes
 
-![](images/tool_tests_test_output_attributes.png)
+.. image:: /_static/imagestool_tests_test_output_attributes.png
 
 
-#### 7. Create **tool->help** component
+7. Create **tool->help** component
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ```
     <help><![CDATA[
@@ -243,14 +256,15 @@ Options: -q INT    mask bases with quality lower than INT [0]
 
 Add **tool->help** component
 
-![](images/tool_help.png)
+.. image:: /_static/imagestool_help.png
 
 Edit **tool->help** component attributes
 
-![](images/tool_help_attributes.png)
+.. image:: /_static/imagestool_help_attributes.png
 
 
-#### 8. Create **tool->citations** component
+8. Create **tool->citations** component
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ```
 <citations>
@@ -268,47 +282,50 @@ Edit **tool->help** component attributes
 
 Add **tool->citations** component
 
-![](images/tool_citations.png)
+.. image:: /_static/imagestool_citations.png
 
 Edit **tool->citations** component attributes
 
 This component does not have attributes
 
-![](images/tool_citations_attributes.png)
+.. image:: /_static/imagestool_citations_attributes.png
 
 Add **tool->citations->citation** component
 
-![](images/tool_citations_citation.png)
+.. image:: /_static/imagestool_citations_citation.png
 
 Edit **tool->citations->citation** component attributes
 
-![](images/tool_citations_citation_attributes.png)
+.. image:: /_static/imagestool_citations_citation_attributes.png
 
 
-#### 9. View the complete XML file
+9. View the complete XML file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now you have created all the components for building the [seqtk_seq_2.xml](https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml) file, you can view the XML page to see how it look like on GTG. Of course, you can view the XML page
+Now you have created all the components for building the `seqtk_seq_2.xml <https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml>`_ file, you can view the XML page to see how it look like on GTG. Of course, you can view the XML page
 any time you want. It doesn't have to be after you have added all the components.
 
-![](images/complete_components.png)
+.. image:: /_static/imagescomplete_components.png
 
 Below is the XML page.
 
-![](images/xml_page_view.png)
+.. image:: /_static/imagesxml_page_view.png
 
 
-### Build tool repository
+Build tool repository
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You have just created the `seqtk_seq_2.xml` file in GTG. However, this file is not in the `gtg_dev_dir/galaxy_tool_repository` directory yet.
+
+You have just created the ``seqtk_seq_2.xml`` file in GTG. However, this file is not in the ``gtg_dev_dir/galaxy_tool_repository`` directory yet.
 We need to the XML file into it, and any other non-XML files if there is any.
 
-Click the **Build Tool Repository** tab and select any XML files that you want to add to the `gtg_dev_dir/galaxy_tool_repository` directory. And then click the `Update XMLs in galaxy_tool_directory folder`. **This is also the button that you use to add an updated XML to the directory**.
+Click the **Build Tool Repository** tab and select any XML files that you want to add to the ``gtg_dev_dir/galaxy_tool_repository`` directory. And then click the `Update XMLs in galaxy_tool_directory folder`. **This is also the button that you use to add an updated XML to the directory**.
 
-![](images/build_tool_repository.png)
+.. image:: /_static/imagesbuild_tool_repository.png
 
-You should be able to see the `seqtk_seq_2.xml` file in the `gtg_dev_dir` directory.
+You should be able to see the ``seqtk_seq_2.xml`` file in the ``gtg_dev_dir`` directory.
 
-![](images/gtg_dev_dir.png)
+.. image:: /_static/imagesgtg_dev_dir.png
 
 
 ### Add non-XML files
@@ -322,11 +339,11 @@ Once we have the XML file(s) and all other non-XML files in the `gtg_dev_dir/gal
 
 First, we need to add the API key.
 
-![](images/api_key.png)
+.. image:: /_static/imagesapi_key.png
 
 Then we can publish the tool through the interface below.
 
-![](images/publish_tool.png)
+.. image:: /_static/imagespublish_tool.png
 
 ### Install and test Tool in Galaxy
 
@@ -334,7 +351,7 @@ The next step would be to install and test the tool in the connected Galaxy inst
 
 The following interface is used to link the tool in GTG with the same tool installed in Galaxy so that the update will be automatically synced to Galaxy for testing.
 
-![](images/sync_tool.png)
+.. image:: /_static/imagessync_tool.png
 
 Everytime you update XML file in Galaxy, you will need to restart Galaxy to integrate the updates. Below is the command to restart Galaxy.
 
