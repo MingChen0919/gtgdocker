@@ -1,16 +1,16 @@
 # Galaxy Tool Generator (GTG)
 
-GTG is a [Drupal](https://www.drupal.org/) based web application which enables developing and publishing 
+GTG is a [Drupal](https://www.drupal.org/) based web application which enables developing and publishing
 Galaxy tools through web interfaces. This web application consists of two Drupal modules: [galaxy_tool_generator_ui](https://github.com/MingChen0919/galaxy_tool_generator_ui) and [galaxy_tool_generator](https://github.com/MingChen0919/galaxy_tool_generator_ui), and
 depends on the Drupal [webform](https://www.drupal.org/project/webform) module.
 
-![](images/gtg-home.png)
+![](docs/_static/images/gtg-home.png)
 
 # Docker Galaxy Tool Generator
 
 This repository builds a Docker image that can be used to quickly launch the GTG web application for Galaxy tool development.
 
- 
+
 To get necessary docker images:
 
 ```
@@ -46,7 +46,7 @@ GTG provides three ways to build a Galaxy XML file:
 * Uploaded XML: starts with an uploaded XML.
 * From scratch: builds XML from scratch.
 
-![](images/create-tool-xml.png)
+![](docs/_static/images/create-tool-xml.png)
 
 ### Start from scratch
 
@@ -59,7 +59,7 @@ For comparison with another software for Galaxy tool development [**planemo**](h
 * Enter `seqtk_seq_2.xml` into **XML file name**
 * Select **From scratch** and click **Save**
 
-![](images/init_seqtk.png)
+![](docs/_static/images/init_seqtk.png)
 
 
 #### 1. Create **tool** component, which is the root component.
@@ -68,11 +68,11 @@ For comparison with another software for Galaxy tool development [**planemo**](h
 <tool id="seqtk_seq" name="Convert to FASTA (seqtk)" version="0.1.0">
 ```
 
-![](images/root_component.png)
+![](docs/_static/images/root_component.png)
 
 Edit tool component attributes
 
-![](images/tool_attributes.png)
+![](docs/_static/images/tool_attributes.png)
 
 
 #### 2. Create **tool->requirements** component.
@@ -85,19 +85,19 @@ Edit tool component attributes
 
 Add **tool->requirements** component
 
-![](images/tool_requirements.png)
+![](docs/_static/images/tool_requirements.png)
 
 Edit **tool->requirements** component attributes. However, this component does not have any attributes.
 
-![](images/tool_requirements_attributes.png)
+![](docs/_static/images/tool_requirements_attributes.png)
 
 Add **tool->requirements->requirement** component
 
-![](images/tool_requirements_seqtk.png)
+![](docs/_static/images/tool_requirements_seqtk.png)
 
 Edit **tool->requirements->requirement** component attributes.
 
-![](images/tool_requirements_seqtk_attributes.png)
+![](docs/_static/images/tool_requirements_seqtk_attributes.png)
 
 #### 3. Create **tool->command** component
 
@@ -109,17 +109,17 @@ Edit **tool->requirements->requirement** component attributes.
 
 Add **tool->command** component
 
-![](images/tool_command.png)
+![](docs/_static/images/tool_command.png)
 
 Edit **tool->command** component attributes.
 
-![](images/tool_command_attributes.png)
+![](docs/_static/images/tool_command_attributes.png)
 
 The **XML value** field in the above web form is used to collect the shell script for the command section. However,
-there is an easier way to input shell script into the tool XML file. Go to the **gtg_dev_dir/galaxy_tool_repository** and create 
-a `.sh` file. Put the shell script into this file, the content will be automatically integrated into the web form field when the XML webform page is being viewed (see the image below). The `.sh` file should have exact the same base name as the XML file. For example, in this example, the XML file is `seqtk_seq_2.xml`, then the `.sh` file should be `seqtk_seq_2.xml`. 
+there is an easier way to input shell script into the tool XML file. Go to the **gtg_dev_dir/galaxy_tool_repository** and create
+a `.sh` file. Put the shell script into this file, the content will be automatically integrated into the web form field when the XML webform page is being viewed (see the image below). The `.sh` file should have exact the same base name as the XML file. For example, in this example, the XML file is `seqtk_seq_2.xml`, then the `.sh` file should be `seqtk_seq_2.xml`.
 
-![](images/view_update_xml.png)
+![](docs/_static/images/view_update_xml.png)
 
 #### 4. Create **tool->inputs** component
 
@@ -131,21 +131,21 @@ a `.sh` file. Put the shell script into this file, the content will be automatic
 
 Add **tool->inputs** component
 
-![](images/tool_inputs.png)
+![](docs/_static/images/tool_inputs.png)
 
 Edit **tool->inputs** component attributes
 
 In this example, we don't need to edit any attributes for this component.
 
-![](images/tool_inputs_attributes.png)
+![](docs/_static/images/tool_inputs_attributes.png)
 
 Add **tool->inputs->param(type: data)** component
 
-![](images/tool_inputs_input_param_data.png)
+![](docs/_static/images/tool_inputs_input_param_data.png)
 
 Edit **tool->inputs->param(type: data)** component attributes
 
-![](images/tool_inputs_input_param_data_attributes.png)
+![](docs/_static/images/tool_inputs_input_param_data_attributes.png)
 
 #### 5. Create **tool->outputs** component
 
@@ -157,13 +157,13 @@ Edit **tool->inputs->param(type: data)** component attributes
 
 Add **tool->outputs** component
 
-![](images/tool_outputs.png)
+![](docs/_static/images/tool_outputs.png)
 
 Edit **tool->outputs** component attributes
 
 In this example, we don't need to edit any attributes for this component.
 
-![](images/tool_outputs_attributes.png)
+![](docs/_static/images/tool_outputs_attributes.png)
 
 #### 6. Create **tool->tests** component
 
@@ -178,46 +178,46 @@ In this example, we don't need to edit any attributes for this component.
 
 Add **tool->tests** component
 
-![](images/tool_tests.png)
+![](docs/_static/images/tool_tests.png)
 
 Edit **tool->tests** component attributes
 
 This component does not have attributes
 
-![](images/tool_tests_attributes.png)
+![](docs/_static/images/tool_tests_attributes.png)
 
 Add **tool->tests->test** component
 
-![](images/tool_tests_test.png)
+![](docs/_static/images/tool_tests_test.png)
 
 Edit **tool->tests->test** component attributes
 
 This component does not have attributes
 
-![](images/tool_tests_test_attributes.png)
+![](docs/_static/images/tool_tests_test_attributes.png)
 
 Add **tool->tests->test->param** component
 
-![](images/tool_tests_test_param.png)
+![](docs/_static/images/tool_tests_test_param.png)
 
 Edit **tool->tests->test->param** component attributes
 
-![](images/tool_tests_test_param_attributes.png)
+![](docs/_static/images/tool_tests_test_param_attributes.png)
 
 Add **tool->tests->test-output** component
 
-![](images/tool_tests_test_output.png)
+![](docs/_static/images/tool_tests_test_output.png)
 
 Edit **tool->tests->test-output** component attributes
 
-![](images/tool_tests_test_output_attributes.png)
+![](docs/_static/images/tool_tests_test_output_attributes.png)
 
 
 #### 7. Create **tool->help** component
 
 ```
     <help><![CDATA[
-        
+
 Usage:   seqtk seq [options] <in.fq>|<in.fa>
 Options: -q INT    mask bases with quality lower than INT [0]
          -X INT    mask bases with quality higher than INT [255]
@@ -243,11 +243,11 @@ Options: -q INT    mask bases with quality lower than INT [0]
 
 Add **tool->help** component
 
-![](images/tool_help.png)
+![](docs/_static/images/tool_help.png)
 
 Edit **tool->help** component attributes
 
-![](images/tool_help_attributes.png)
+![](docs/_static/images/tool_help_attributes.png)
 
 
 #### 8. Create **tool->citations** component
@@ -268,21 +268,21 @@ Edit **tool->help** component attributes
 
 Add **tool->citations** component
 
-![](images/tool_citations.png)
+![](docs/_static/images/tool_citations.png)
 
 Edit **tool->citations** component attributes
 
 This component does not have attributes
 
-![](images/tool_citations_attributes.png)
+![](docs/_static/images/tool_citations_attributes.png)
 
 Add **tool->citations->citation** component
 
-![](images/tool_citations_citation.png)
+![](docs/_static/images/tool_citations_citation.png)
 
 Edit **tool->citations->citation** component attributes
 
-![](images/tool_citations_citation_attributes.png)
+![](docs/_static/images/tool_citations_citation_attributes.png)
 
 
 #### 9. View the complete XML file
@@ -290,11 +290,11 @@ Edit **tool->citations->citation** component attributes
 Now you have created all the components for building the [seqtk_seq_2.xml](https://raw.githubusercontent.com/MingChen0919/gtgdocker/master/seqtk_seq_2.xml) file, you can view the XML page to see how it look like on GTG. Of course, you can view the XML page
 any time you want. It doesn't have to be after you have added all the components.
 
-![](images/complete_components.png)
+![](docs/_static/images/complete_components.png)
 
 Below is the XML page.
 
-![](images/xml_page_view.png)
+![](docs/_static/images/xml_page_view.png)
 
 
 ### Build tool repository
@@ -304,11 +304,11 @@ We need to the XML file into it, and any other non-XML files if there is any.
 
 Click the **Build Tool Repository** tab and select any XML files that you want to add to the `gtg_dev_dir/galaxy_tool_repository` directory. And then click the `Update XMLs in galaxy_tool_directory folder`. **This is also the button that you use to add an updated XML to the directory**.
 
-![](images/build_tool_repository.png)
+![](docs/_static/images/build_tool_repository.png)
 
 You should be able to see the `seqtk_seq_2.xml` file in the `gtg_dev_dir` directory.
 
-![](images/gtg_dev_dir.png)
+![](docs/_static/images/gtg_dev_dir.png)
 
 
 ### Add non-XML files
@@ -322,11 +322,11 @@ Once we have the XML file(s) and all other non-XML files in the `gtg_dev_dir/gal
 
 First, we need to add the API key.
 
-![](images/api_key.png)
+![](docs/_static/images/api_key.png)
 
 Then we can publish the tool through the interface below.
 
-![](images/publish_tool.png)
+![](docs/_static/images/publish_tool.png)
 
 ### Install and test Tool in Galaxy
 
@@ -334,7 +334,7 @@ The next step would be to install and test the tool in the connected Galaxy inst
 
 The following interface is used to link the tool in GTG with the same tool installed in Galaxy so that the update will be automatically synced to Galaxy for testing.
 
-![](images/sync_tool.png)
+![](docs/_static/images/sync_tool.png)
 
 Everytime you update XML file in Galaxy, you will need to restart Galaxy to integrate the updates. Below is the command to restart Galaxy.
 
@@ -357,10 +357,4 @@ galaxy:handler1: started
 
 # More examples
 
-* [findSSRs tool](https://github.com/MingChen0919/gtgdocker/blob/master/example_tools/findSRRs/findSRRs.md): an example for developing [Aurora Galaxy Tools](https://github.com/statonlab/aurora-galaxy-tools). 
-
-
-
-
-
-
+* [findSSRs tool](https://github.com/MingChen0919/gtgdocker/blob/master/example_tools/findSRRs/findSRRs.md): an example for developing [Aurora Galaxy Tools](https://github.com/statonlab/aurora-galaxy-tools).
